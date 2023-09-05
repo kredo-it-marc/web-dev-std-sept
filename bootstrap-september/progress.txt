@@ -1,0 +1,18 @@
+Day 1 - Sept 4, 2023
+1. Pre-test
+2. Bootstrap 
+    a. Introduction to Bootstrap
+    b. Bootstrap Basic
+
+Day 2 - Sept 5, 2023
+1. Bootstrap
+    a. Bootstrap Basic
+    b. Grid System
+    c. Typography
+    d. Images
+    e. Utilities (To be continued)
+
+Homework:
+1. Activity 2 slide 28 - bs-basic-act.html
+2. Activity 3 slide 34 - typography-act.html
+3. Activity 4 slide 41 - images-and-icons-act.html
