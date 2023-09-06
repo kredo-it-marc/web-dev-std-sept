@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Bootstrap Utilities</title>
+    <style>
+        span{
+            display: inline-block;
+            width: 75px;
+            height: 75px;
+            margin: 25px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -44,7 +52,7 @@
         </div>
 
         <h2>Height</h2>
-        <div style="border: 1px solid balck; height: 100px;"><!--parent-->
+        <div style="border: 1px solid black; height: 100px; overflow: scroll;"><!--parent-->
             <!-- child/ren -->
             <!-- div.h-25.bg-primary{h-25}*5 -->
             <div class="h-25 bg-primary">h-25</div>
@@ -53,6 +61,54 @@
             <div class="h-100 bg-warning">h-100</div>
             <div class="h-auto bg-success">h-auto</div>
         </div>
+
+        <h1>Borders</h1>
+        <h2>Additive</h2>
+        <span class="border">border</span>
+        <span class="border-top">border-top</span>
+        <span class="border-end">border-end</span>
+        <span class="border-bottom">border-bottom</span>
+        <span class="border-start">border-start</span>
+
+        <h2>Subtractive</h2>
+        <span class="border-0" style="border: 1px solid black;">border-0</span>
+        <span class="border-top-0" style="border: 1px solid black;">border-top-0</span>
+        <span class="border-end-0" style="border: 1px solid black;">border-end-0</span>
+        <span class="border-bottom-0" style="border: 1px solid black;">border-bottom-0</span>
+        <span class="border-start-0" style="border: 1px solid black;">border-start-0</span>
+
+        <h2>Colors</h2>
+        <span class="border border-primary">border-primary</span>
+        <span class="border border-secondary">border-secondary</span>
+        <span class="border border-success">border-success</span>
+        <span class="border border-info">border-info</span>
+        <span class="border border-warning">border-warning</span>
+        <span class="border border-danger">border-danger</span>
+
+        <h2>Width</h2>
+        <span class="border">border</span>
+        <span class="border border-1">border-1</span>
+        <span class="border border-2">border-2</span>
+        <span class="border border-3">border-3</span>
+        <span class="border border-4">border-4</span>
+        <span class="border border-5">border-5</span>
+
+        <h2>Radius and Size</h2>
+        <span class="border border-2 rounded">rounded</span>
+        <span class="border border-2 rounded-top">rounded-top</span>
+        <span class="border border-2 rounded-end">rounded-end</span>
+        <span class="border border-2 rounded-bottom">rounded-bottom</span>
+        <span class="border border-2 rounded-start">rounded-start</span>
+        <span class="border border-2 rounded-circle">rounded-circle</span>
+        <span class="border border-2 rounded-circle" style="width: 250px;">rounded-circle</span>
+        <span class="border border-2 rounded-pill">rounded-pill</span>
+        <span class="border border-2 rounded-pill" style="width: 250px;">rounded-pill</span>
+        
+        <br>
+        <span class="border border-2 rounded-0">rounded-0</span>
+        <span class="border border-2 rounded-1">rounded-1</span>
+        <span class="border border-2 rounded-2">rounded-2</span>
+        <span class="border border-2 rounded-3">rounded-3</span>
     </div>
 </body>
 </html>

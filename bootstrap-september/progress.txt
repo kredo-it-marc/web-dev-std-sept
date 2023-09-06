@@ -16,3 +16,15 @@ Homework:
 1. Activity 2 slide 28 - bs-basic-act.html
 2. Activity 3 slide 34 - typography-act.html
 3. Activity 4 slide 41 - images-and-icons-act.html
+
+
+Day 3 - Sept 6, 2023
+
+1. Bootstrap
+    a. Utilities 
+    b. Cards
+    c. Navbar
+
+
+Homework:
+1. Activity 5 slide 56 card-act.html
