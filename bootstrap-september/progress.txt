@@ -28,3 +28,15 @@ Day 3 - Sept 6, 2023
 
 Homework:
 1. Activity 5 slide 56 card-act.html
+
+Day 4 - Sept 7, 2023
+
+1. Bootstrap
+    a. Table
+    b. Forms
+
+2. PHP
+    a. Intro to PHP
+    b. Variables
+
+NO HOMEWORK
