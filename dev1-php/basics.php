@@ -15,4 +15,20 @@
     $age = 21;
     
     echo "<p>My name is $first_name $last_name. I am $age years old.</p>";
+
+    // Data type
+    $str = "I am a string.";
+    $int = 200;
+    $float_or_double = 700.003;
+    $bool = FALSE;
+
+    //var_dump() => is a function. It displays the value and the data type.
+    var_dump($str);
+    echo "<br>";
+    var_dump($int);
+    echo "<br>";
+    var_dump($float_or_double);
+    echo "<br>";
+    var_dump($bool);
+    echo "<br>";
 ?>
