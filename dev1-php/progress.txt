@@ -49,4 +49,14 @@ Day 5 - Sept 8, 2023
     c. Form Handling
 
 HOMEWORK
-1. Activity 1 slide 41 pg-sum-act.php
+1. Activity 1 slide 41 pg-sum-act.php 
+2. Activity 2 slide 42 pg-day-act.php
+3. Activity 3 slide 43 pg-arithmetic-act.php
+
+For activity 1 and 2, no need to style the page. For Activity 3, you use Bootstrap for the form and the output. Also, leave the action blank.
+
+Day 6 - Sept 11, 2023
+
+1. PHP Functions
+    a. Internal / Built-in Functions
+    b. User-defined Functions
