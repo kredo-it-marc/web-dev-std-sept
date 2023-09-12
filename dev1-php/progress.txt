@@ -60,3 +60,15 @@ Day 6 - Sept 11, 2023
 1. PHP Functions
     a. Internal / Built-in Functions
     b. User-defined Functions
+
+Day 7 - Sept 12, 2023
+
+1. Conditional Statements
+    a. if statement
+    b. if-else statement
+    c. if-elseif-else statement
+
+HOMEWORK
+1. Activity 3 - the greatest activity
+2. Activity 4 - leap year activity
+3. Activity 5 - odd/even activity
