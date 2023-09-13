@@ -66,9 +66,18 @@ Day 7 - Sept 12, 2023
 1. Conditional Statements
     a. if statement
     b. if-else statement
-    c. if-elseif-else statement
 
 HOMEWORK
 1. Activity 3 - the greatest activity
 2. Activity 4 - leap year activity
 3. Activity 5 - odd/even activity
+
+Day 8 - Sept 13, 2023
+
+1. Conditional Statements
+    a. if-elseif-else statement
+    
+HOMEWORK:
+1. blog portfolio pages: https://tinyurl.com/4x8sfkhj
+    this will be be used at the final week for the final project
+2. Activity 9

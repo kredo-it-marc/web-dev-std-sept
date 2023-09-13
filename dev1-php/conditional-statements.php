@@ -50,7 +50,34 @@
      * 
      * The year is a leap year if:
      * 1. year is divisible by 4 and NOT divisible by 100
+     *  
      * OR
      * 2. year is divisible by 4, by 100, and by 400
      */
+
+     //if-elseif-else 
+    /**
+     * 0-6 Acidi
+     * 7 - Neutral
+     * 8-14 - Alkaline
+     */
+
+    $ph = 25;
+
+    if( 0<=$ph && $ph<= 6)// check if the ph leve is between 0-6 (acidic)
+    {
+        echo "<p>$ph is acidic</p>";
+    }
+    elseif($ph == 7)
+    {
+        echo "<p>$ph is neutral</p>";
+    }
+    elseif(8<=$ph && $ph<=14)
+    {
+        echo "<p>$ph is alkaline</p>";
+    }
+    else
+    {
+        echo "<p>$ph is invalid</p>";
+    }
 ?>
