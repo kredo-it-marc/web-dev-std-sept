@@ -81,3 +81,16 @@ HOMEWORK:
 1. blog portfolio pages: https://tinyurl.com/4x8sfkhj
     this will be be used at the final week for the final project
 2. Activity 9
+
+
+Day 9 - Sept 14, 2023
+
+1. Loops
+    a. While Loop
+    b. Do-while Loop
+    c. For Loop
+
+HOMEWORK
+1. Activity 6 - Foobar Activity
+2. Activity 8 - Condition Activity
+3. Activity 9 - Search Char Activity 
