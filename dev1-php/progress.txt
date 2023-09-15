@@ -93,4 +93,11 @@ Day 9 - Sept 14, 2023
 HOMEWORK
 1. Activity 6 - Foobar Activity
 2. Activity 8 - Condition Activity
-3. Activity 9 - Search Char Activity 
+3. Activity 9 - Search Char Activity
+
+Day 10 - Sept 15, 2023
+
+1.Arrays
+    a. Indexed Array
+    b. Associative Array
+        i. 2D Associative Array
