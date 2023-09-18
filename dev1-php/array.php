@@ -14,18 +14,18 @@
     $color[3] = "Green";
 
     //displaying individual values
-    echo $fruits[0]."<br>";
-    echo $fruits[1]."<br>";
-    echo $fruits[2]."<br>";
+    echo $fruits[0]."<br>"; //Apple
+    echo $fruits[1]."<br>"; //Banana
+    echo $fruits[2]."<br>"; //Orange
 
-    echo $trees[0]."<br>";
-    echo $trees[1]."<br>";
-    echo $trees[2]."<br>";
-    echo $trees[3]."<br>";
+    echo $trees[0]."<br>"; //Mango
+    echo $trees[1]."<br>"; // Narra
+    echo $trees[2]."<br>"; //Mahogany
+    echo $trees[3]."<br>"; //Fire Tree
 
-    echo $color[0]."<br>";
-    echo $color[1]."<br>";
-    echo $color[2]."<br>";
+    echo $color[0]."<br>"; //Blue
+    echo $color[1]."<br>"; //Red
+    echo $color[2]."<br>"; //Yellow
 
     //display contents of an array using print_r()
     print_r($fruits);
@@ -48,5 +48,13 @@
     foreach($color as $value)
     {
         echo "<p>$value</p>";
+    }
+
+
+    //displaying array using for loop
+    $fruits_length = count($fruits); //count() counts how many elements/values there are in the array
+    for($key=0; $key<$fruits_length; $key++)
+    {
+        echo "<h1>".$fruits[$key]."</h1>";
     }
 ?>

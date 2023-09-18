@@ -97,7 +97,19 @@ HOMEWORK
 
 Day 10 - Sept 15, 2023
 
-1.Arrays
+1. Nested Loop
+2. Arrays (To be COntinued)
+    a. Indexed Array
+
+NO HOMEWORK. KINDLY REVIEW.
+
+Day 11 - Sept 18, 2023
+
+1. Arrays
     a. Indexed Array
     b. Associative Array
         i. 2D Associative Array
+
+HOMEWORK
+1. minimart-catalog - https://drive.google.com/file/d/1ReQ4-kwS-V8tsGIkTRyD2JD97-Z5FQjf/view
+2. Activity 4 - array-age-discount-act.php
