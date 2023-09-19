@@ -58,3 +58,45 @@
         echo "<h1>".$fruits[$key]."</h1>";
     }
 ?>
+
+<h1>Associative Array</h1>
+<?php
+    //declaring an associative array
+    // Method 1 - using []
+    $person = ["name"=>"Nikko","age"=>25, "address"=>"Tagum City"];
+
+    //Method 2 - using array()
+    $book = array("title"=>"Harry Potter", "author"=>"J.K. Rowling", "price"=>10.00);
+
+    //assigning individual values to an associative array
+    // $array_name[key/index] = value;
+    $age["Mary"] = 16;
+    $age["James"] = 25;
+    $age["Tim"] = 30;
+
+    //displaying individual values from the array
+    echo $person["name"],"<br>"; //Nikko
+    echo $person["age"],"<br>"; // 25
+    echo $person["address"],"<br>"; //Tagum City
+
+    //using foreach loop
+    foreach($book as $key => $value)
+    {
+        echo "<p>The $key is $value</p>";
+    }
+?>
+
+<h1>2D Array</h1>
+<?php
+    $market = [
+        "round" => ["fruit1"=>"Orange","fruit2"=>"Grapes"],
+        "yellow" => ["fruit3"=>"Banana","fruit4"=>"Mango"]
+    ];
+
+    //to access individual values from a 2D array
+    //$array_name[sub_array][key/index];
+    echo $market["round"]["fruit1"];
+    echo $market["round"]["fruit2"];
+    echo $market["yellow"]["fruit3"];
+    echo $market["yellow"]["fruit4"];
+?>

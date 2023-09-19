@@ -113,3 +113,10 @@ Day 11 - Sept 18, 2023
 HOMEWORK
 1. minimart-catalog - https://drive.google.com/file/d/1ReQ4-kwS-V8tsGIkTRyD2JD97-Z5FQjf/view
 2. Activity 4 - array-age-discount-act.php
+
+
+Day 12 - Sept 19, 2023
+
+1. Arrays
+    a. Associative Array
+        i. 2D Associative Array
