@@ -120,3 +120,14 @@ Day 12 - Sept 19, 2023
 1. Arrays
     a. Associative Array
         i. 2D Associative Array
+
+Day 13 - Sept 20, 2023
+
+1. 2D Associative Array
+2.  MySQL
+    a. Intro to MySQL
+    b. phpMyAdmin
+    c. Basic SQL Commands
+
+Homework:
+1. 

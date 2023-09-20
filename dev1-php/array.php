@@ -95,8 +95,21 @@
 
     //to access individual values from a 2D array
     //$array_name[sub_array][key/index];
-    echo $market["round"]["fruit1"];
-    echo $market["round"]["fruit2"];
-    echo $market["yellow"]["fruit3"];
-    echo $market["yellow"]["fruit4"];
+    echo $market["round"]["fruit1"],"<br>"; //Orange
+    echo $market["round"]["fruit2"],"<br>"; //GRapes
+    echo $market["yellow"]["fruit3"],"<br>"; //Banana
+    echo $market["yellow"]["fruit4"],"<br>"; //Mango
+
+    foreach($market as $sub_array => $values)
+    {
+        echo "<h1>$sub_array</h1>";
+        
+        echo "<ul>";
+        foreach($values as $key => $val)
+        {
+            echo "<li>$val</li>";
+        }
+        echo "</ul>";
+
+    }
 ?>
