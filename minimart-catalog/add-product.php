@@ -1,4 +1,8 @@
 <!-- getAllSections(), createProduct() -->
+<?php
+    include "database.php";
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -33,13 +37,25 @@
 
                 <label for="section-id" class="form-label small">Section</label>
                 <select name="section_id" id="section-id" class="form-select mb-5" required>
-                    <option value="" hidden>Select Section</option>
                     <?php
-                    $sections_result = getAllSections();
-                    while($sections_row = $sections_result->fetch_assoc()){
-                        echo "<option value='".$sections_row['id']."'>".$sections_row['title']."</option>";
-                    }
+                        $sections = getAllSections();
+
+                        if($sections && $sections->num_rows >0)
+                        {
+                            echo "<option selected disabled>Select a Section</option>";
+
+                            while($row = $sections->fetch_assoc())
+                            {
+                                echo "<option value='".$row["id"]."'>".$row["title"]."</option>";
+                            }
+                        }
+                        else
+                        {
+                            echo "<option selected disabled>No Sections to display</option>";
+                        }
+                    
                     ?>
+                    
                 </select>
 
                 <a href="products.php" class="btn btn-outline-secondary">Cancel</a>
@@ -57,3 +73,11 @@
 </body>
 
 </html>
+<?php
+    function getAllSections()
+    {
+        $conn = dbConnect();
+        $sql = "SELECT * FROM sections";
+        return $conn->query($sql);
+    }
+?>
