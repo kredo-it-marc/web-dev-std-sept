@@ -1,5 +1,6 @@
 <?php
    include "database.php";
+   session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,3 +57,35 @@
 </body>
 
 </html>
+<?php
+   function login($username, $password)
+   {
+      $conn = dbConnect();
+      $sql  = "SELECT * FROM users WHERE username = '$username'";
+      $result = $conn->query($sql);
+
+      if($result->num_rows == 1)//check if the sql statements returns at most 1 result
+      {
+         $user_details = $result->fetch_assoc();//returns a single result from the sql statement as an associative array
+         $password_match = password_verify($password, $user_details["password"]); //check if the passwords match
+
+         if($password_match)
+         {
+            //assign information to session
+            $_SESSION["user_id"] = $user_details["id"];
+            $_SESSION["username"] = $user_details["username"];
+            header("Location: products.php"); //redirect to products page
+         }
+         else
+         {
+            //display an error message
+            echo "<div class='alert alert-danger w-50 mx-auto text-center my-4'>Incorrect password. Kindly try again.</div>";
+         }
+      }
+      else
+      {
+         //display an error message
+         echo "<div class='alert alert-danger w-50 mx-auto text-center my-4'>Incorrect username. Kindly try again.</div>";
+      }
+   }
+?>
