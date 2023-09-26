@@ -18,7 +18,7 @@
         </ul>
         <!-- right -->
         <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a href="profile.php" class="nav-link fw-bold">{insert username here}</a></li>
+            <li class="nav-item"><a href="profile.php" class="nav-link fw-bold"><?= $_SESSION["username"] ?></a></li>
             <li class="nav-item"><a href="logout.php" class="nav-link">Log out</a></li>
         </ul>
     </div>

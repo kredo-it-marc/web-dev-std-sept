@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <?php
+        include "main-nav.php";
+    ?>
     <main class="card w-25 mx-auto border-0 my-5">
         <div class="card-header bg-white border-0">
             <h2 class="card-title text-center text-danger h4 mb-0">Delete Product</h2>

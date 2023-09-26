@@ -1,4 +1,11 @@
 <!-- getSections(), getProduct(), updateProduct() -->
+<?php
+    include "database.php";
+    session_start();
+
+    $product_id = $_GET["product_id"];
+    $product_details = getProduct($product_id);
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,6 +17,9 @@
 </head>
 
 <body>
+    <?php
+        include "main-nav.php";
+    ?>
     <main class="card w-25 mx-auto my-5">
         <div class="card-header bg-secondary text-white">
             <h2 class="card-title h4 mb-0">Edit Product Details</h2>
@@ -18,20 +28,43 @@
             <form action="" method="post">
                 <!-- Copy the form from add-product.php but change the submit button -->
                 <label for="title" class="form-label small">Title</label>
-                <input type="text" name="title" id="title" class="form-control mb-2" value="" required autofocus>
+                <input type="text" name="title" id="title" class="form-control mb-2" value="<?= $product_details["title"]?>" required autofocus>
 
                 <label for="description" class="form-label small">Description</label>
-                <textarea name="description" id="description" cols="30" rows="10" class="form-control mb-2" required></textarea>
+                <textarea name="description" id="description" cols="30" rows="10" class="form-control mb-2" required><?= $product_details["description"]?></textarea>
 
                 <label for="price" class="form-label small">Price</label>
                 <div class="input-group mb-2">
                     <div class="input-group-text">$</div>
-                    <input type="number" name="price" id="price" class="form-control" value="" required>
+                    <input type="number" name="price" id="price" class="form-control" value="<?= $product_details["price"] ?>" required>
                 </div>
 
                 <label for="section_id" class="form-label small">Section</label>
                 <select name="section_id" id="section_id" class="form-select mb-5" required>
-                    <option value="" hidden>Select Section</option>
+                    <?php
+                        $sections = getSections();
+
+                        if($sections && $sections->num_rows >0)
+                        {
+                            echo "<option selected disabled>Select Section</option>";
+
+                            while($row = $sections->fetch_assoc())
+                            {
+                                if($product_details["section_id"] == $row["id"])
+                                {
+                                    echo "<option selected value='".$row["id"]."'>".$row["title"]."</option>";
+                                }
+                                else
+                                {
+                                    echo "<option value='".$row["id"]."'>".$row["title"]."</option>";
+                                }
+                            }   
+                        }
+                        else
+                        {
+                            echo "<option selected disabled>No Sections to display.</option>";
+                        }
+                    ?>
                 </select>
 
                 <a href="products.php" class="btn btn-outline-secondary">Cancel</a>
@@ -49,3 +82,19 @@
 </body>
 
 </html>
+<?php
+    function getProduct($product_id)
+    {
+        $conn = dbConnect();
+        $sql = "SELECT * FROM products WHERE id = $product_id";
+        return $conn->query($sql)->fetch_assoc();
+    }
+
+    function getSections()
+    {
+        $conn = dbConnect();
+        $sql = "SELECT * FROM sections";
+        return $conn->query($sql);
+    }
+
+?>

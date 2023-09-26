@@ -11,10 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+    <?php
+        include "main-nav.php";
+    ?>
     <main class="container py-5">
         <a href="sections.php" class="btn btn-outline-info float-end ms-2"><i class="fas fa-plus-circle"></i> Add New Section</a>
         <a href="add-product.php" class="btn btn-success float-end"><i class="fas fa-plus-circle"></i> Add New Product</a>
@@ -45,8 +48,8 @@
                             echo "<td>".$row["title"]."</td>";
                             echo "<td>".$row["description"]."</td>";
                             echo "<td>".$row["price"]."</td>";
-                            echo "<td>".$row["section_id"]."</td>";
-                            echo "<td></td>";
+                            echo "<td>".$row["section"]."</td>";
+                            echo "<td><a class='btn btn-outline-warning btn-sm me-3' href='edit-product.php?product_id=".$row["id"]."'><i class='fa-solid fa-pen-to-square'></i></a><a class='btn btn-outline-danger btn-sm' href='remove-product.php?product_id=".$row["id"]."'><i class='fa-solid fa-trash'></i></a></td>";
                             echo "</tr>";
                         }
                     }
@@ -72,7 +75,7 @@
     function getproducts()
     {
         $conn = dbConnect();
-        $sql = "SELECT * FROM products";
+        $sql = "SELECT products.id, products.title, products.description, products.price, sections.title as section FROM products INNER JOIN sections ON products.section_id = sections.id";
         $result = $conn->query($sql);
         return $result;
     }

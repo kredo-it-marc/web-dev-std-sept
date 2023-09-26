@@ -15,7 +15,20 @@
 
 <body>
     <?php
-    include "main-nav.php";
+        include "main-nav.php";
+    ?>
+    <?php
+        if(isset($_POST["btn_add"]))
+        {
+            //INPUT
+            $title = $_POST["title"];
+            $description = $_POST["description"];
+            $price = $_POST["price"];
+            $section_id = $_POST["section_id"];
+
+            //PROCESS
+            createProduct($title, $description, $price, $section_id);
+        }
     ?>
     <main class="card w-25 mx-auto my-5">
         <div class="card-header bg-success text-white">
@@ -79,5 +92,20 @@
         $conn = dbConnect();
         $sql = "SELECT * FROM sections";
         return $conn->query($sql);
+    }
+
+    function createProduct($title, $description, $price, $section_id)
+    {
+        $conn = dbConnect();
+        $sql = "INSERT INTO products(title, description,price,section_id) VALUES('$title','$description','$price', $section_id)";
+        
+        if($conn->query($sql))
+        {
+            header("Location:products.php");
+        }
+        else
+        {
+            echo "<div class='alert alert-danger w-50 mx-auto text-center my-4'>An error occured. failed to save the new product. <br><small>".$conn->error."</small></div>";
+        }
     }
 ?>

@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <?php
+        include "main-nav.php";
+    ?>
     <main class="container py-5">
         <div class="card w-25 mx-auto">
             <img src="assets/images/default.jpeg" alt="photo" class="card-img-top"> 
