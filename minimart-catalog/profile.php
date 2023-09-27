@@ -1,4 +1,10 @@
 <!-- updatePhoto(), getUser() -->
+<?php
+    include "database.php";
+    session_start();
+    
+    $user_details = getUser($_SESSION["user_id"]);
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,11 +20,40 @@
     <?php
         include "main-nav.php";
     ?>
+    <?php
+        if( isset($_POST["btn_upload_photo"]) )
+        {
+            //INPUT
+            $filename = $_FILES["photo"]["name"];
+            $temp_loc = $_FILES["photo"]["tmp_name"];
+
+            //PROCESS
+            uploadPhoto($_SESSION["user_id"], $filename, $temp_loc);
+        }
+    
+    ?>
     <main class="container py-5">
         <div class="card w-25 mx-auto">
-            <img src="assets/images/default.jpeg" alt="photo" class="card-img-top"> 
+            <?php
+                if($user_details["photo"] == NULL)
+                {
+            ?>
+                   <!-- display default photo -->
+                   <img src="assets/images/default.jpeg" alt="photo" class="card-img-top"> 
+            <?php
+                }
+                else
+                {
+            ?>
+                    <!-- display profile picture -->
+                    <img src="assets/images/<?= $user_details["photo"] ?>" alt="photo" class="card-img-top"> 
+            <?php        
+                }
+            ?>
+            
             <div class="card-body">
-                <h1><?= $user_details["username"] ?></h1>
+                <h1 class='h4'><?= $user_details["first_name"]." ".$user_details["last_name"] ?></h1>
+                <h2 class="h6 text-muted"><?= $user_details["username"] ?></h2>
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="input-group mb-2">
                         <input type="file" name="photo" class="form-control" aria-label="Choose Photo">
@@ -32,3 +67,29 @@
 </body>
 
 </html>
+<?php
+    function getUser($user_id)
+    {
+        $conn = dbConnect();
+        $sql = "SELECT * FROM users WHERE id = $user_id";
+        return $conn->query($sql)->fetch_assoc();
+    }
+
+    function uploadPhoto($user_id, $filename, $temp_loc)
+    {
+        $conn = dbConnect();
+        $sql = "UPDATE users SET photo = '$filename' WHERE id = $user_id";
+
+        if($conn->query($sql))
+        {
+            $destination = "assets/images/".$filename;
+            move_uploaded_file($temp_loc,$destination);
+            header("refresh:0");
+        }
+        else
+        {
+            // display an error message
+            echo "<div class='alert alert-danger w-50 mx-auto my-4 text-center'>An error occured. Failed to update photo. <br><small>".$conn->error."</small></div>";
+        }
+    }
+?>

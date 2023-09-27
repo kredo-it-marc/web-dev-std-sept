@@ -20,6 +20,19 @@
     <?php
         include "main-nav.php";
     ?>
+    <?php
+        if(isset($_POST["btn_save"]))
+        {
+            //INPUT
+            $title = $_POST["title"];
+            $description = $_POST["description"];
+            $price = $_POST["price"];
+            $section_id = $_POST["section_id"];
+
+            //PROCESS
+            updateProduct($product_id,$title,$description,$price,$section_id);
+        }
+    ?>
     <main class="card w-25 mx-auto my-5">
         <div class="card-header bg-secondary text-white">
             <h2 class="card-title h4 mb-0">Edit Product Details</h2>
@@ -95,6 +108,21 @@
         $conn = dbConnect();
         $sql = "SELECT * FROM sections";
         return $conn->query($sql);
+    }
+
+    function updateProduct($product_id,$title,$description,$price,$section_id)
+    {
+        $conn = dbConnect();
+        $sql = "UPDATE products SET title='$title', description='$description',price=$price,section_id=$section_id WHERE id = $product_id";
+
+        if($conn->query($sql))
+        {
+            header("Location:products.php");
+        }
+        else
+        {
+            echo "<div class='alert alert-danger w-50 mx-auto my-4 text-center'>Failed to update data. Kindly try again. <br><small>".$conn->error."</small></div>";
+        }
     }
 
 ?>
